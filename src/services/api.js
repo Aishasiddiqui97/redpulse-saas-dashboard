@@ -55,7 +55,11 @@ export const apiService = {
   login: async (email, password) => {
     await delay(1000);
     // Hardcoded credentials for Demo
-    if (email === 'admin@saas.com' && password === 'password123') {
+    if (email === 'aishaanjumsiddiqui97@gmail.com' && password === 'L@r@1997') {
+      const aishaUser = { id: '0', name: 'Aisha A. Siddiqui', email: 'aishaanjumsiddiqui97@gmail.com', role: 'admin', status: 'active', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Aisha' };
+      localStorage.setItem('saas_current_user', JSON.stringify(aishaUser));
+      return { success: true, user: aishaUser, token: 'mock-jwt-aisha-token' };
+    } else if (email === 'admin@saas.com' && password === 'password123') {
       const adminUser = { id: '1', name: 'Sarah Connor', email: 'admin@saas.com', role: 'admin', status: 'active', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150' };
       localStorage.setItem('saas_current_user', JSON.stringify(adminUser));
       return { success: true, user: adminUser, token: 'mock-jwt-admin-token' };
