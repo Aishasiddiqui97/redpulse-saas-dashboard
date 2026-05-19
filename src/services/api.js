@@ -55,7 +55,8 @@ export const apiService = {
   login: async (email, password) => {
     await delay(1000);
     // Hardcoded credentials for Demo
-    if (email === 'aishaanjumsiddiqui97@gmail.com' && password === 'L@r@1997') {
+    const aishaPwdHash = btoa('L@r@1997');
+    if (email === 'aishaanjumsiddiqui97@gmail.com' && btoa(password) === aishaPwdHash) {
       const aishaUser = { id: '0', name: 'Aisha A. Siddiqui', email: 'aishaanjumsiddiqui97@gmail.com', role: 'admin', status: 'active', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Aisha' };
       localStorage.setItem('saas_current_user', JSON.stringify(aishaUser));
       return { success: true, user: aishaUser, token: 'mock-jwt-aisha-token' };
